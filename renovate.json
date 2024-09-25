@@ -1,35 +1,9 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:recommended"],
     "copier": {
       "fileMatch": [
         "(.*)\\.copier-answers.*(\\..+)?\\.ya?ml"
       ]
     },
-    "extends": ["config:recommended"],
-    "ignoreScripts": false,
-    "ignoreTests": true,
-    "includePaths": ["apps/.copier-answers.yml"],
-    "packageRules": [
-      {
-        "addLabels": ["major"],
-        "automerge": false,
-        "matchUpdateTypes": ["major"]
-      },
-      {
-        "automerge": true,
-        "bumpVersion": "patch",
-        "groupName": "dependencies",
-        "matchUpdateTypes": ["patch", "minor"]
-      },
-      {
-        "commitMessageTopic": "Copier: {{{replace 'https:\\/\\/github\\.com\\/[\\w\\d-_]+\\/|\\.git' '' depName}}}",
-        "groupName": null,
-        "matchManagers": ["copier"]
-      }
-    ],
-    "platformAutomerge": true,
-    "prHourlyLimit": 10,
-    "rebaseWhen": "behind-base-branch",
-    "schedule": ["after 12am and before 5am every monday"],
-    "timezone": "Europe/Berlin"
+    "includePaths": ["apps/.copier-answers.yml"]
 }
