@@ -1,0 +1,9 @@
+configMapGenerator:
+  - name: my-app
+    namespace: default
+    files:
+      - conf1=config/config-1.yaml
+      - conf2=config/config-2.yaml
+
+resources:
+  - deployment.yaml
