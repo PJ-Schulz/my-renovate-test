@@ -13,7 +13,11 @@ spec:
     spec:
       containers:
       - name: my-app
+<<<<<<< before updating
         image: nginx:alpine
+=======
+        image: nginx:1.27.1
+>>>>>>> after updating
         resources:
           limits:
             memory: "128Mi"
